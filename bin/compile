@@ -45,6 +45,7 @@ if [[ -f "${ENV_DIR}/SSH_KNOWN_HOSTS" ]]; then
 fi
 
 # SSH AGENT SECTION
-echo "eval `ssh-agent -s`" >> "${BUILD_DIR}/.profile.d/init_ssh.sh"
-echo "ssh-add ~/.ssh/id_rsa" >> "${BUILD_DIR}/.profile.d/init_ssh.sh"
-arrow "Wrote launch script for ssh-agent"
+# trying without this
+# echo "eval \`ssh-agent -s\`" >> "${BUILD_DIR}/.profile.d/init_ssh.sh"
+# echo "ssh-add ~/.ssh/id_rsa" >> "${BUILD_DIR}/.profile.d/init_ssh.sh"
+# msg "Wrote launch script for ssh-agent"
