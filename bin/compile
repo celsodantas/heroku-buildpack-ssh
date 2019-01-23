@@ -43,3 +43,8 @@ if [[ -f "${ENV_DIR}/SSH_KNOWN_HOSTS" ]]; then
   msg "Setting up known hosts"
   echo '[[ "${SSH_KNOWN_HOSTS}" != "" ]] && ssh-keyscan $SSH_KNOWN_HOSTS >> "${HOME}/.ssh/known_hosts" 2>/dev/null' >> "${BUILD_DIR}/.profile.d/init_ssh.sh"
 fi
+
+# SSH AGENT SECTION
+echo "eval `ssh-agent -s`" >> "${BUILD_DIR}/.profile.d/init_ssh.sh"
+echo "ssh-add ~/.ssh/id_rsa" >> "${BUILD_DIR}/.profile.d/init_ssh.sh"
+arrow "Wrote launch script for ssh-agent"
